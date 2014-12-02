@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="app_name">MyAndroidPractices</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_dialog_test">DialogTestActivity</string>
+    <string name="title_activity_barcode_example">BarcodeExampleActivity</string>
+    
+    <string name="btn_barcode">Barcode Example</string>
+    <string name="btn_dialog">Dialog Example</string>
+
+</resources>

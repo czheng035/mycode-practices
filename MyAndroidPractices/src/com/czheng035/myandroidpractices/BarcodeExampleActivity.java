@@ -1,15 +1,13 @@
 package com.czheng035.myandroidpractices;
 
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 public class BarcodeExampleActivity extends Activity {
 
@@ -29,7 +27,7 @@ public class BarcodeExampleActivity extends Activity {
 			String scanContent = scanningResult.getContents();
 			String scanFormat = scanningResult.getFormatName();
 			TextView textViewMessage = (TextView) this.findViewById(R.id.tx_message);
-			textViewMessage.setText(scanContent + "/n" + scanFormat);
+			textViewMessage.setText(scanContent + "\n" + scanFormat);
 		} else {
 			Toast toast = Toast.makeText(getApplicationContext(),
 					"No scan data received!", Toast.LENGTH_SHORT);

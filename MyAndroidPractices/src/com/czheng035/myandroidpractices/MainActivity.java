@@ -1,6 +1,7 @@
 package com.czheng035.myandroidpractices;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,36 +10,21 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		Button btnDialog = (Button) findViewById(R.id.btn_dialog);
-		Button btnBarcodeExample = (Button) findViewById(R.id.btn_barcode);
-		
-		btnDialog.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(getApplicationContext(), DialogExampleActivity.class);
-				MainActivity.this.startActivity(intent);
-			}
-		});
-		
-		btnBarcodeExample.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(getApplicationContext(), BarcodeExampleActivity.class);
-				MainActivity.this.startActivity(intent);
-			}
-		});
-		
-//		Intent intent = new Intent(getApplicationContext(), DialogTestActivity.class);
-//		startActivity(intent);
+		findViewById(R.id.btn_dialog).setOnClickListener(this);
+		findViewById(R.id.btn_barcode).setOnClickListener(this);
+		findViewById(R.id.btn_googleplus_signin).setOnClickListener(this);
+		findViewById(R.id.btn_google_auth_util).setOnClickListener(this);
+
+		// Intent intent = new Intent(getApplicationContext(),
+		// DialogTestActivity.class);
+		// startActivity(intent);
 	}
 
 	@Override
@@ -58,5 +44,30 @@ public class MainActivity extends ActionBarActivity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onClick(View view) {
+		Intent intent = null;
+		Context context = getApplicationContext();
+		switch (view.getId()) {
+		case R.id.btn_dialog:
+			intent = new Intent(context,
+					DialogExampleActivity.class);
+			break;
+		case R.id.btn_barcode:
+			intent = new Intent(context,
+					BarcodeExampleActivity.class);
+			break;
+		case R.id.btn_googleplus_signin:
+			// intent = new Intent(getApplicationContext(),
+			// GooglePlusSignInActivity.class);
+			break;
+		case R.id.btn_google_auth_util:
+			intent = new Intent(context, GoogleAuthUtilSampleActivity.class);
+			break;
+		}
+		if (intent != null)
+			startActivity(intent);
 	}
 }

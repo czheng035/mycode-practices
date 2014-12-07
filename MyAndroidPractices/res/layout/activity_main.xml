@@ -28,6 +28,20 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:text="@string/btn_barcode" />
+
+        <Button
+            android:id="@+id/btn_googleplus_signin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/btn_googleplus_signin" />
+
+        <Button
+            android:id="@+id/btn_google_auth_util"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/btn_google_auth_util" />
     </LinearLayout>
 
 </RelativeLayout>

@@ -60,8 +60,8 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 					BarcodeExampleActivity.class);
 			break;
 		case R.id.btn_googleplus_signin:
-			// intent = new Intent(getApplicationContext(),
-			// GooglePlusSignInActivity.class);
+			intent = new Intent(getApplicationContext(),
+					GooglePlusSignInActivity.class);
 			break;
 		case R.id.btn_google_auth_util:
 			intent = new Intent(context, GoogleAuthUtilSampleActivity.class);

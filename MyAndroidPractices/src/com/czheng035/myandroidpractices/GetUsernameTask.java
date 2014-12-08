@@ -13,6 +13,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class GetUsernameTask extends AsyncTask<Void, Void, String> {
@@ -54,14 +55,16 @@ public class GetUsernameTask extends AsyncTask<Void, Void, String> {
 		Context context = mActivity;
 		CharSequence text = result;
 		int duration = Toast.LENGTH_SHORT;
-
+		TextView textView = (TextView) mActivity.findViewById(R.id.tx_message);
+		textView.setText(result);
 		Toast toast = Toast.makeText(context, text, duration);
 		toast.show();
 	}
 
 	protected String fetchToken() throws IOException {
 		try {
-			return GoogleAuthUtil.getToken(mActivity, mEmail, mScope);
+//			return GoogleAuthUtil.getToken(mActivity, mEmail, mScope);
+			return GoogleAuthUtil.getAccountId(mActivity, mEmail);
 		} catch (UserRecoverableAuthException userRecoverableException) {
 			// GooglePlayServices.apk is either old, disabled, or not present
 			// so we need to show the user some UI in the activity to recover.
